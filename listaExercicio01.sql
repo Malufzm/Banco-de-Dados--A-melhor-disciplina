@@ -44,3 +44,10 @@ SELECT produto, SUM(receita) AS total_da_receita
 FROM vendas
 GROUP BY produto
 HAVING SUM(receita) > 10000.00;
+
+/*10º exercício*/
+SELECT autores.nome AS autor, COUNT(livros.id) AS numero_de_livros
+FROM autores
+LEFT JOIN livros ON autores.id = livros.autor_id
+GROUP BY autores.nome
+HAVING COUNT(livros.id) >= 2;
