@@ -68,3 +68,8 @@ INNER JOIN matriculas ON alunos.id = matriculas.aluno_id;
 SELECT autores.nome AS autor, livros.titulo
 FROM autores
 LEFT JOIN livros ON autores.id = livros.autor_id;
+
+/*14º exercício*/
+SELECT matriculas.curso, alunos.nome AS aluno
+FROM matriculas
+RIGHT JOIN alunos ON matriculas.aluno_id = alunos.id;
