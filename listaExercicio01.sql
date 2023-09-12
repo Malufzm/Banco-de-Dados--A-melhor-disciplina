@@ -93,3 +93,11 @@ FROM vendas
 GROUP BY produto
 ORDER BY total_da_receita ASC
 LIMIT 1;
+
+/*18º exercício*/
+SELECT autores.nome AS autor, 
+COUNT(livros.id) AS numero_de_livros,
+COUNT(livros.id) * 20 AS total_da_receita
+FROM autores
+LEFT JOIN livros ON autores.id = livros.autor_id
+GROUP BY autores.nome;
