@@ -38,3 +38,9 @@ GROUP BY curso;
 SELECT produto, AVG(receita) AS media_da_receita
 FROM vendas
 GROUP BY produto;
+
+/*9º exercício*/
+SELECT produto, SUM(receita) AS total_da_receita
+FROM vendas
+GROUP BY produto
+HAVING SUM(receita) > 10000.00;
