@@ -33,3 +33,8 @@ GROUP BY autores.nome;
 SELECT curso, COUNT(aluno_id) AS alunos_totais
 FROM matriculas
 GROUP BY curso;
+
+/*8º exercício*/
+SELECT produto, AVG(receita) AS media_da_receita
+FROM vendas
+GROUP BY produto;
