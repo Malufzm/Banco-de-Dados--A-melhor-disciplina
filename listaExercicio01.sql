@@ -109,3 +109,10 @@ FROM alunos
 LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
 GROUP BY alunos.nome
 ORDER BY total_de_matriculas DESC;
+
+/*20º exercício*/
+SELECT produto, COUNT(*) AS numero_de_transacoes
+FROM vendas
+GROUP BY produto
+ORDER BY numero_de_transacoes DESC
+LIMIT 1;
