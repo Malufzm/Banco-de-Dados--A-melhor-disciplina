@@ -101,3 +101,11 @@ COUNT(livros.id) * 20 AS total_da_receita
 FROM autores
 LEFT JOIN livros ON autores.id = livros.autor_id
 GROUP BY autores.nome;
+
+/*19º exercício*/
+SELECT alunos.nome AS aluno,
+COUNT(matriculas.id) AS total_de_matriculas
+FROM alunos
+LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
+GROUP BY alunos.nome
+ORDER BY total_de_matriculas DESC;
