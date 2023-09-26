@@ -92,3 +92,32 @@ DELIMITER ;
 CALL sp_TitulosPorCategoria('Romance');
 
 CALL sp_TitulosPorCategoria('Ciência');
+
+Exercício 7:
+DELIMITER //
+
+CREATE PROCEDURE sp_AdicionarLivro(IN tituloLivro VARCHAR(255), IN editoraID INT, IN anoPublicacao INT, IN numeroPaginas INT, IN categoriaID INT, OUT mensagem VARCHAR(255))
+BEGIN
+    DECLARE livroExiste INT;
+    
+    SELECT COUNT(*) INTO livroExiste
+    FROM Livro
+    WHERE Titulo = tituloLivro;
+    
+    IF livroExiste > 0 THEN
+        SET mensagem = 'Erro: O livro com o título já existe.';
+    ELSE
+        INSERT INTO Livro (Titulo, Editora_ID, Ano_Publicacao, Numero_Paginas, Categoria_ID)
+        VALUES (tituloLivro, editoraID, anoPublicacao, numeroPaginas, categoriaID);
+        
+        SET mensagem = 'Livro adicionado com sucesso.';
+    END IF;
+END //
+
+DELIMITER ;
+
+DECLARE @mensagem VARCHAR(255);
+
+CALL sp_AdicionarLivro('Novo Livro', 1, 2022, 300, 2, @mensagem);
+
+SELECT @mensagem;
