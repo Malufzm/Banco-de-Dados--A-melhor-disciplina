@@ -59,3 +59,19 @@ DELIMITER ;
 DECLARE @resultado BOOLEAN;
 CALL sp_VerificarLivrosCategoria('Romance', @resultado);
 SELECT @resultado;
+
+Exercício 5:
+DELIMITER //
+
+CREATE PROCEDURE sp_LivrosAteAno(IN anoPublicacao INT)
+BEGIN
+    SELECT Livro.Titulo, Livro.Ano_Publicacao
+    FROM Livro
+    WHERE Livro.Ano_Publicacao <= anoPublicacao;
+END //
+
+DELIMITER ;
+
+CALL sp_LivrosAteAno(2010);
+
+CALL sp_LivrosAteAno(2015);
