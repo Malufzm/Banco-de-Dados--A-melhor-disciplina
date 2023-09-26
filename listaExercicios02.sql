@@ -121,3 +121,20 @@ DECLARE @mensagem VARCHAR(255);
 CALL sp_AdicionarLivro('Novo Livro', 1, 2022, 300, 2, @mensagem);
 
 SELECT @mensagem;
+
+Exercício 8:
+DELIMITER //
+
+CREATE PROCEDURE sp_AutorMaisAntigo(OUT nomeAutorMaisAntigo VARCHAR(255))
+BEGIN
+    SELECT CONCAT(Nome, ' ', Sobrenome) INTO nomeAutorMaisAntigo
+    FROM Autor
+    WHERE Data_Nascimento = (SELECT MIN(Data_Nascimento) FROM Autor);
+END //
+
+DELIMITER ;
+DECLARE @nomeAutorMaisAntigo VARCHAR(255);
+
+CALL sp_AutorMaisAntigo(@nomeAutorMaisAntigo);
+
+SELECT @nomeAutorMaisAntigo;
