@@ -52,3 +52,6 @@ CREATE TABLE eventos (
 INSERT INTO eventos (data_evento) VALUES ('2023-10-01');
 INSERT INTO eventos (data_evento) VALUES ('2023-10-05');
 INSERT INTO eventos (data_evento) VALUES ('2023-10-10');
+
+b) 
+INSERT INTO eventos (data_evento) VALUES (NOW());
