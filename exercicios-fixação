@@ -114,3 +114,9 @@ BEGIN
     
     RETURN resultado;
 END;
+
+b) 
+CREATE FUNCTION CALCULAR_EXPONENCIAL(base DECIMAL(10, 2), expoente INT) RETURNS DECIMAL(10, 2)
+BEGIN
+    RETURN POW(base, expoente);
+END;
