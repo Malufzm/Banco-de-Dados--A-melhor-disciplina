@@ -83,3 +83,6 @@ CREATE FUNCTION TOTAL_VALOR(preco DECIMAL(10, 2), quantidade INT) RETURNS DECIMA
 BEGIN
     RETURN preco * quantidade;
 END;
+
+b) 
+SELECT produto, quantidade, TOTAL_VALOR(preco, quantidade) AS valor_total FROM produtos;
