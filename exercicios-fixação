@@ -13,3 +13,10 @@ SELECT UPPER(nome) FROM nomes;
 
 c)
 SELECT nome, LENGTH(nome) AS tamanho FROM nomes;
+
+d)
+SELECT
+    CASE WHEN nome LIKE '%a%' THEN CONCAT('Sra. ', nome)
+         ELSE CONCAT('Sr. ', nome)
+    END AS nome_com_tratamento
+FROM nomes;
