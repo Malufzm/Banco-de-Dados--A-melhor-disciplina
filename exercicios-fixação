@@ -58,3 +58,6 @@ INSERT INTO eventos (data_evento) VALUES (NOW());
 
 c) 
 SELECT DATEDIFF(data_evento, '2023-10-01') AS dias_passados FROM eventos;
+
+d) 
+SELECT data_evento, DAYNAME(data_evento) AS nome_dia_semana FROM eventos;
