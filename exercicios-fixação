@@ -61,3 +61,9 @@ SELECT DATEDIFF(data_evento, '2023-10-01') AS dias_passados FROM eventos;
 
 d) 
 SELECT data_evento, DAYNAME(data_evento) AS nome_dia_semana FROM eventos;
+
+
+a) 
+SELECT produto,
+       IF(quantidade > 0, 'Em estoque', 'Fora de estoque') AS status_estoque
+FROM produtos;
