@@ -20,3 +20,16 @@ SELECT
          ELSE CONCAT('Sr. ', nome)
     END AS nome_com_tratamento
 FROM nomes;
+
+
+a)
+CREATE TABLE produtos (
+    produto VARCHAR(255),
+    preco DECIMAL(10, 2),
+    quantidade INT
+);
+
+INSERT INTO produtos (produto, preco, quantidade) VALUES ('Produto A', 25.50, 10);
+INSERT INTO produtos (produto, preco, quantidade) VALUES ('Produto B', 49.99, 5);
+INSERT INTO produtos (produto, preco, quantidade) VALUES ('Produto C', 99.90, 0);
+INSERT INTO produtos (produto, preco, quantidade) VALUES ('Produto D', 12.75, -3);
