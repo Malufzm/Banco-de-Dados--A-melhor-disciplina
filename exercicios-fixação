@@ -120,3 +120,16 @@ CREATE FUNCTION CALCULAR_EXPONENCIAL(base DECIMAL(10, 2), expoente INT) RETURNS 
 BEGIN
     RETURN POW(base, expoente);
 END;
+
+c) 
+CREATE FUNCTION VERIFICAR_PALINDROMO(palavra VARCHAR(255)) RETURNS INT
+BEGIN
+    DECLARE reverso VARCHAR(255);
+    SET reverso = REVERSE(palavra);
+    
+    IF palavra = reverso THEN
+        RETURN 1;
+    ELSE
+        RETURN 0;
+    END IF;
+END;
