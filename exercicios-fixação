@@ -7,3 +7,6 @@ INSERT INTO nomes (nome) VALUES ('Roberta');
 INSERT INTO nomes (nome) VALUES ('Roberto');
 INSERT INTO nomes (nome) VALUES ('Maria Clara');
 INSERT INTO nomes (nome) VALUES ('João');
+
+b)
+SELECT UPPER(nome) FROM nomes;
