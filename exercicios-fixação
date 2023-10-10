@@ -96,3 +96,6 @@ SELECT produto, MAX(preco) AS produto_mais_caro FROM produtos;
 
 c) 
 SELECT produto, MIN(preco) AS produto_mais_barato FROM produtos;
+
+d) 
+SELECT SUM(IF(quantidade > 0, preco, 0)) AS total_em_estoque FROM produtos;
