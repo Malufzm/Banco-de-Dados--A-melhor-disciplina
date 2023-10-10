@@ -39,3 +39,6 @@ SELECT produto, ROUND(preco, 2) AS preco_arredondado FROM produtos;
 
 c)
 SELECT produto, ABS(quantidade) AS quantidade_absoluta FROM produtos;
+
+d) 
+SELECT AVG(preco) AS media_precos FROM produtos;
