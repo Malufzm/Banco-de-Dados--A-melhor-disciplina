@@ -55,3 +55,6 @@ INSERT INTO eventos (data_evento) VALUES ('2023-10-10');
 
 b) 
 INSERT INTO eventos (data_evento) VALUES (NOW());
+
+c) 
+SELECT DATEDIFF(data_evento, '2023-10-01') AS dias_passados FROM eventos;
