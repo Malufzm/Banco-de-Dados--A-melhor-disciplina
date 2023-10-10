@@ -67,3 +67,12 @@ a)
 SELECT produto,
        IF(quantidade > 0, 'Em estoque', 'Fora de estoque') AS status_estoque
 FROM produtos;
+
+b) Use a função CASE para classificar os produtos em categorias de preço: "Barato", "Médio" e "Caro":
+SELECT produto,
+       CASE
+           WHEN preco < 50 THEN 'Barato'
+           WHEN preco >= 50 AND preco <= 100 THEN 'Médio'
+           ELSE 'Caro'
+       END AS categoria_preco
+FROM produtos;
