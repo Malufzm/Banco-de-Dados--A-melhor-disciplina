@@ -30,3 +30,17 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+4-
+DELIMITER //
+CREATE TRIGGER ImpedeAtualizacaoNomeNuloOuVazio
+BEFORE UPDATE ON Clientes
+FOR EACH ROW
+BEGIN
+    IF NEW.nome IS NULL OR NEW.nome = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Não é permitido atualizar o nome para NULL ou string vazia';
+    END IF;
+END;
+//
+DELIMITER ;
