@@ -44,3 +44,22 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+
+5-
+DELIMITER //
+CREATE TRIGGER AtualizaEstoqueAoSolicitarPedido
+AFTER INSERT ON Pedidos
+FOR EACH ROW
+BEGIN
+    UPDATE Produtos
+    SET estoque = estoque - NEW.quantidade
+    WHERE id = NEW.produto_id;
+
+    IF (SELECT estoque FROM Produtos WHERE id = NEW.produto_id) < 5 THEN
+        INSERT INTO Auditoria (mensagem)
+        VALUES (CONCAT('Estoque baixo para o produto ', NEW.produto_id));
+    END IF;
+END;
+//
+DELIMITER ;
