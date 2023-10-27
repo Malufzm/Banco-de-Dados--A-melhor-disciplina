@@ -18,3 +18,15 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+3-
+DELIMITER //
+CREATE TRIGGER AtualizaNomeClienteNaAuditoria
+AFTER UPDATE ON Clientes
+FOR EACH ROW
+BEGIN
+    INSERT INTO Auditoria (mensagem)
+    VALUES (CONCAT('Nome do cliente atualizado de ', OLD.nome, ' para ', NEW.nome));
+END;
+//
+DELIMITER ;
